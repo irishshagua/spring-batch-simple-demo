@@ -95,7 +95,7 @@ public class BatchConfig {
   @Bean
   public Step readProcessWriteSampleStep() {
     return stepBuilderFactory.get("readProcessWriteStep")
-        .<Object, String> chunk(1)
+        .<String, String> chunk(1)
         .reader(reader())
         .writer(writer())
         .build();
